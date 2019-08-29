@@ -1,18 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { GstAddComponent } from './gst-add/gst-add.component';
+import { GstEditComponent } from './gst-edit/gst-edit.component';
+import { GstGetComponent } from './gst-get/gst-get.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BusinessService } from './business.service';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GstAddComponent,
+    GstEditComponent,
+    GstGetComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SlimLoadingBarModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ BusinessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
